@@ -26,12 +26,12 @@ const starWarsCharacters = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const nomi = []
-for (let i = 0; i < starWarsCharacters.length; i++) {
-   nomi.push(starWarsCharacters[i].name);
+const nomi = [] //Crea un array vuoto che si chiama nomi
+for (let i = 0; i < starWarsCharacters.length; i++) { // itera l'array di partenza
+   nomi.push(starWarsCharacters[i].name); // per ogni valore che trovi, inserisci nel tuo array vuoto il valore della proprietà name
 }
 
-console.log(nomi);
+console.table(nomi);
 
 /* ESERCIZIO 2 — Solo i femminili
    Array vuoto "personaggiFemminili". Con un for + if (gender === "female"),
@@ -40,15 +40,16 @@ console.log(nomi);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const personaggiFemminili = []
+const personaggiFemminili = [];
 for (let i = 0; i < starWarsCharacters.length; i++) {
    if (starWarsCharacters[i].gender === 'female') {
-      const nuovoPersonaggioFemminile = {
+      personaggiFemminili.push(
+         {
          name: starWarsCharacters[i].name,
          hair_color: starWarsCharacters[i].hair_color,
-         eye_color: starWarsCharacters[i].eye_color,
-      };
-      personaggiFemminili.push(nuovoPersonaggioFemminile);
+         eye_color: starWarsCharacters[i].eye_color
+      }
+   );
    }
 }
 
@@ -110,7 +111,14 @@ console.log(perColoreOcchi);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let i = 0;
+let massaTotale = 0;
 
+while ( i < starWarsCharacters.length) {
+massaTotale += Number(starWarsCharacters[i].mass);
+i++
+}
+console.log(`Massa Totale: ${massaTotale}`);
 
 /* ESERCIZIO 6 — Classifica il carico
    Su massaTotale, switch (true) o if/else if:
