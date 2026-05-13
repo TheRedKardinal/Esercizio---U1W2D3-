@@ -130,10 +130,8 @@ console.log(`Massa Totale: ${massaTotale}`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-switch (massaTotale) {
-   case "blue":
-      perColoreOcchi.blue.push(character);
-      break;
+switch (true) {
+
    case (massaTotale < 500):
       console.log(`${massaTotale} -> Carico Leggero`);
       break;
@@ -151,8 +149,6 @@ switch (massaTotale) {
       break;
 }
 
-
-
 /* ESERCIZIO 7 — Robotizza i n/a
    For: per ogni personaggio con gender === "n/a", cambialo in "robot".
    Stampa l'array.
@@ -160,6 +156,12 @@ switch (massaTotale) {
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+for (let i = 0; i < starWarsCharacters.length; i++) {
+   if (starWarsCharacters[i].gender === 'n/a') {
+      starWarsCharacters[i].gender = 'robot'
+   }
+}
+console.log(starWarsCharacters);
 
 /* ESERCIZIO 8 — Più alto e più basso
    For su starWarsCharacters. Trova il personaggio con altezza maggiore e quello con altezza minore.
@@ -168,7 +170,16 @@ switch (massaTotale) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+let alto = 0
+let basso = 0
+for (let i = 0; i < starWarsCharacters.length; i++) {
+   if (starWarsCharacters[i].height > alto) {
+      alto = starWarsCharacters[i].height
+   } else if (starWarsCharacters[i].height > basso && starWarsCharacters[i].height < alto) {
+      starWarsCharacters[i].height = basso
+   }
+}
+conso
 
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
