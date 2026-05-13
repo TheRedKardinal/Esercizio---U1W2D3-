@@ -45,11 +45,11 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
    if (starWarsCharacters[i].gender === 'female') {
       personaggiFemminili.push(
          {
-         name: starWarsCharacters[i].name,
-         hair_color: starWarsCharacters[i].hair_color,
-         eye_color: starWarsCharacters[i].eye_color
-      }
-   );
+            name: starWarsCharacters[i].name,
+            hair_color: starWarsCharacters[i].hair_color,
+            eye_color: starWarsCharacters[i].eye_color
+         }
+      );
    }
 }
 
@@ -114,9 +114,9 @@ console.log(perColoreOcchi);
 let i = 0;
 let massaTotale = 0;
 
-while ( i < starWarsCharacters.length) {
-massaTotale += Number(starWarsCharacters[i].mass);
-i++
+while (i < starWarsCharacters.length) {
+   massaTotale += Number(starWarsCharacters[i].mass);
+   i++
 }
 console.log(`Massa Totale: ${massaTotale}`);
 
@@ -130,6 +130,27 @@ console.log(`Massa Totale: ${massaTotale}`);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+switch (massaTotale) {
+   case "blue":
+      perColoreOcchi.blue.push(character);
+      break;
+   case (massaTotale < 500):
+      console.log(`${massaTotale} -> Carico Leggero`);
+      break;
+   case (massaTotale >= 500 && massaTotale <= 700):
+      console.log(`${massaTotale} -> Carico Medio`);
+      break;
+   case (massaTotale >= 700 && massaTotale <= 900):
+      console.log(`${massaTotale} -> Attenzione: oltre 700`);
+      break;
+   case (massaTotale >= 900 && massaTotale <= 1000):
+      console.log(`${massaTotale} -> Carico Critico`);
+      break;
+   case (massaTotale > 1000):
+      console.log(`${massaTotale} -> PERICOLO: sovraccarico`);
+      break;
+}
+
 
 
 /* ESERCIZIO 7 — Robotizza i n/a
