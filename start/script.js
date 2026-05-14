@@ -157,11 +157,11 @@ switch (true) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-   if (starWarsCharacters[i].gender === 'n/a') {
+   if(starWarsCharacters[i].gender === 'n/a') {
       starWarsCharacters[i].gender = 'robot'
    }
 }
-console.log(starWarsCharacters);
+console.table(starWarsCharacters);
 
 /* ESERCIZIO 8 — Più alto e più basso
    For su starWarsCharacters. Trova il personaggio con altezza maggiore e quello con altezza minore.
@@ -170,16 +170,18 @@ console.log(starWarsCharacters);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let alto = 0
-let basso = 0
+let alto = starWarsCharacters[0];
+let basso = starWarsCharacters[0];
 for (let i = 0; i < starWarsCharacters.length; i++) {
-   if (starWarsCharacters[i].height > alto) {
-      alto = starWarsCharacters[i].height
-   } else if (starWarsCharacters[i].height > basso && starWarsCharacters[i].height < alto) {
-      starWarsCharacters[i].height = basso
+   if (Number(starWarsCharacters[i].height) > Number(alto.height)) {
+      alto = starWarsCharacters[i];
+   }
+   if (Number(starWarsCharacters[i].height) < Number(basso.height)) {
+      basso = starWarsCharacters[i];
    }
 }
-conso
+   console.log(`Più alto: ${alto.name}: ${alto.height} cm`);
+   console.log(`Più alto: ${basso.name}: ${basso.height} cm`);
 
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
@@ -188,7 +190,15 @@ conso
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+console.log(`Lunghezza prima: ${nomi.length}`);
+for (let i = 0; i < nomi.length; i++) {
+   for (let j = 0; j < personaggiFemminili.length; j++) {
+      if (nomi[i] === personaggiFemminili[j].name) {
+         nomi.splice(i, 1);
+      }
+   }
+}
+console.log(`Lunghezza dopo: ${nomi.length}`);
 
 /* ESERCIZIO 10 — Personaggio casuale
    indice = Math.floor(Math.random() * starWarsCharacters.length)
@@ -206,3 +216,6 @@ conso
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+for (const colore in perColoreOcchi) {
+   console.log(`${colore}: ${perColoreOcchi[colore].length} personaggi`);
+}
