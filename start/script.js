@@ -157,7 +157,7 @@ switch (true) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-   if(starWarsCharacters[i].gender === 'n/a') {
+   if (starWarsCharacters[i].gender === 'n/a') {
       starWarsCharacters[i].gender = 'robot'
    }
 }
